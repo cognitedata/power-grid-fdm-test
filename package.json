@@ -6,7 +6,7 @@
   "scripts": {
     "signin": "cdf signin",
     "cdf": "cdf",
-    "setup": "node setup.js",
+    "configure": "node configure.js",
     "upsert-storage": "node yaml-to-json.js src/dms.yml .tmp/dms.json && cdf data-models storage models apply -f .tmp/dms.json",
     "upsert-space": "cdf data-models storage spaces apply --externalId=fdm-test",
     "upsert-api": "cdf data-models api create --externalId=fdm-test",

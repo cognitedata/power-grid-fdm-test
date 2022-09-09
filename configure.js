@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const newProjectName = process.argv[2];
-const paths = fs.readdirSync(".").concat(fs.readdirSync("src"));
+const paths = fs.readdirSync(".").concat(fs.readdirSync("src").map(p => `src/${p}`));
 
 const replaceRegex = /fdm-test/gm
 
