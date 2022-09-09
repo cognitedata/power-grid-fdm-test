@@ -1,0 +1,9 @@
+spaceExternalId: fdm-test
+items:
+  - externalId: Area
+    allowNode: true
+    allowEdge: false
+    properties:
+      name:
+        type: text
+        nullable: false

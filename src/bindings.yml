@@ -1,0 +1,10 @@
+- targetName: "Area"
+  dataModelStorageMappingSource:
+    filter:
+      and:
+        - hasData: 
+            models:
+              - ["fdm-test", "Area"]
+    properties:
+      - from:
+          property: ["fdm-test", "Area", ".*"]

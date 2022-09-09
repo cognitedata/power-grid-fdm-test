@@ -1,0 +1,24 @@
+{
+  "name": "fdm-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "signin": "cdf signin",
+    "cdf": "cdf",
+    "setup": "node setup.js",
+    "upsert-storage": "node yaml-to-json.js src/dms.yml .tmp/dms.json && cdf data-models storage models apply -f .tmp/dms.json",
+    "upsert-space": "cdf data-models storage spaces apply --externalId=fdm-test",
+    "upsert-api": "cdf data-models api create --externalId=fdm-test",
+    "upsert-api-version": "node yaml-to-json.js src/bindings.yml .tmp/bindings.json && cdf data-models api versions publish --externalId=fdm-test --bindings=.tmp/bindings.json --file=src/api.graphql --conflictMode PATCH --apiVersion 1",
+    "generate-docs": "cdf data-models docs --data-model fdm-test --data-model-version 1",
+    "generate-python-sdk": "cdf data-models generate-python-sdk --data-model fdm-test --data-model-version 1",
+    "generate-js-sdk": "cdf data-models generate-js-sdk --data-model fdm-test --data-model-version 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cognite/cdf-cli": "^0.0.5--alpha10",
+    "yaml": "^2.1.1"
+  }
+}
