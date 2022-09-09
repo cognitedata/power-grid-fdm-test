@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "signin": "cdf signin",
+    "sign-in": "cdf signin",
     "cdf": "cdf",
     "configure": "node configure.js",
     "upsert-storage": "node yaml-to-json.js src/dms.yml .tmp/dms.json && cdf data-models storage models apply -f .tmp/dms.json",
